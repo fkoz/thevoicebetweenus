@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Voice Between Us — No photos. No profiles. Just voices.</title>
+<meta name="description" content="The Voice Between Us is a voice-first way to meet someone. A matchmaker gets to know you by talking with you, then introduces you to one person — by voice.">
+<style>
+  :root{
+    --bg:#faf6ef; --bg2:#f4ecdc; --ink:#2b2135; --muted:#6f6478;
+    --accent:#bc4a32; --accent2:#dfa04e; --line:#e7dcc4; --max:1040px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--ink);font-family:Georgia,"Times New Roman",serif;line-height:1.65;-webkit-font-smoothing:antialiased}
+  .sans{font-family:"Segoe UI",system-ui,-apple-system,Arial,sans-serif}
+  a{color:var(--accent);text-decoration:none}
+  a:hover{text-decoration:underline}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+  header{border-bottom:1px solid var(--line);background:rgba(250,246,239,.9);backdrop-filter:blur(8px);position:sticky;top:0;z-index:10}
+  .nav{display:flex;justify-content:space-between;align-items:center;padding:17px 0}
+  .brand{display:flex;align-items:center;gap:11px;font-size:21px;font-style:italic;font-weight:700}
+  .brand .wave{width:36px;height:22px;flex:none}
+  .nav .tag{color:var(--muted);font-size:12.5px;letter-spacing:1.7px;text-transform:uppercase}
+  @media(max-width:680px){.nav .tag{display:none}}
+  .hero{padding:84px 0 0;text-align:center;background:
+    radial-gradient(820px 360px at 50% -8%,rgba(223,160,78,.30),transparent 62%),
+    radial-gradient(560px 300px at 88% 20%,rgba(188,74,50,.10),transparent 60%),var(--bg)}
+  .kicker{color:var(--accent);font-size:13px;font-weight:600;letter-spacing:2.6px;text-transform:uppercase;margin-bottom:22px}
+  h1{font-size:56px;line-height:1.13;font-weight:700;letter-spacing:-.4px}
+  h1 em{background:linear-gradient(92deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent;font-style:italic}
+  .hero p{color:var(--muted);font-size:20px;max-width:730px;margin:26px auto 0}
+  @media(max-width:700px){h1{font-size:39px}.hero{padding:58px 0 0}.hero p{font-size:18.5px}}
+  .hero-art{max-width:860px;margin:48px auto 0;padding:0 24px}
+  .hero-art .frame{border-radius:22px;overflow:hidden;border:1px solid var(--line);box-shadow:0 30px 70px rgba(120,72,30,.22)}
+  .hero-art img{display:block;width:100%;height:auto}
+  .hero-art .cap{color:var(--muted);font-size:14.5px;font-style:italic;margin:14px 0 56px;text-align:center}
+  @media(max-width:700px){.hero-art .cap{margin-bottom:44px}}
+  section{padding:62px 0;border-top:1px solid var(--line)}
+  @media(max-width:700px){section{padding:48px 0}}
+  h2{font-size:32px;margin-bottom:12px;text-align:center}
+  .sub{color:var(--muted);text-align:center;max-width:680px;margin:0 auto 38px;font-size:17.5px}
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  @media(max-width:760px){.steps{grid-template-columns:1fr}}
+  .step{background:#fff;border:1px solid var(--line);border-radius:18px;padding:30px;box-shadow:0 10px 30px rgba(120,72,30,.07);transition:transform .25s ease,box-shadow .25s ease}
+  .step:hover{transform:translateY(-4px);box-shadow:0 20px 44px rgba(120,72,30,.13)}
+  .step .num{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;margin-bottom:15px;box-shadow:0 8px 20px rgba(188,74,50,.30)}
+  .step h3{font-size:21px;margin-bottom:8px}
+  .step p{color:var(--muted);font-size:16px}
+  .why{max-width:780px;margin:0 auto;text-align:center}
+  .why .big{font-size:23px;line-height:1.55}
+  .pull{margin:36px auto 0;max-width:720px;font-size:26px;font-style:italic;line-height:1.5;color:var(--ink);border-left:3px solid var(--accent2);padding:6px 0 6px 26px;text-align:left}
+  .status{background:linear-gradient(160deg,#fff8ec,var(--bg2));border:1px solid var(--line);border-radius:20px;padding:42px;text-align:center;box-shadow:0 22px 55px rgba(120,72,30,.12)}
+  .status .kicker{margin-bottom:14px}
+  .status-h{margin-bottom:10px}
+  .status p{color:var(--muted);max-width:650px;margin:0 auto;font-size:17px}
+  @media(max-width:680px){.status{padding:32px 24px}}
+  .waitlist{margin-top:26px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+  .waitlist input{font-size:16px;padding:14px 20px;border:1px solid var(--line);border-radius:999px;width:310px;max-width:100%;background:#fff;color:var(--ink);box-shadow:inset 0 2px 6px rgba(120,72,30,.06)}
+  .waitlist button{font-size:16px;padding:14px 28px;border:none;border-radius:999px;background:linear-gradient(92deg,var(--accent),#cf6a3a);color:#fff;cursor:pointer;font-weight:600;box-shadow:0 10px 26px rgba(188,74,50,.30)}
+  .waitlist button:disabled{opacity:.6;cursor:default}
+  .fineprint{font-size:13.5px;color:var(--muted);margin-top:15px}
+  .disc{font-size:13.5px;color:var(--muted);text-align:center;max-width:730px;margin:22px auto 0;line-height:1.6}
+  .safety{max-width:720px;margin:0 auto;text-align:center;color:var(--muted);font-size:17px}
+  footer{padding:34px 0 46px;color:var(--muted);font-size:14px;border-top:1px solid var(--line)}
+  footer .row{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <div class="brand">
+      <svg class="wave" viewBox="0 0 44 24" fill="none" aria-hidden="true"><path d="M2 12h4l2.5-6 3 12 3-16 3 18 3-13 2.5 5H42" stroke="#bc4a32" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      The Voice Between Us
+    </div>
+    <div class="tag sans">Fall for the voice, then the person</div>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="wrap">
+    <div class="kicker sans">A voice-first way to meet someone</div>
+    <h1>No photos. No profiles.<br><em>Just voices.</em></h1>
+    <p>The Voice Between Us is a voice-first way to meet someone. A matchmaker gets to know you by talking with you — five days of real conversation — then introduces you to one person, by voice. Names and faces stay hidden until you both choose to reveal them.</p>
+  </div>
+  <div class="hero-art">
+    <div class="frame"><img src="assets/hero-voices.webp" alt="Two voices, drawn as flowing waves, meeting in the middle"></div>
+    <div class="cap">Two voices. One conversation. Nothing else in the way.</div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <h2>How it works</h2>
+    <p class="sub">Three steps. No swiping, no feeds, no performing for a profile.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="num sans">1</div>
+        <h3>Talk</h3>
+        <p>Each day, a short voice conversation with your matchmaker — what you love, how you live, what you're looking for.</p>
+      </div>
+      <div class="step">
+        <div class="num sans">2</div>
+        <h3>Meet one voice</h3>
+        <p>When the matchmaker finds your person, you start talking — voice only, no photos, no names.</p>
+      </div>
+      <div class="step">
+        <div class="num sans">3</div>
+        <h3>Reveal together</h3>
+        <p>When you're both ready, the veil lifts — together, or not at all.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Why voice</h2>
+    <div class="why">
+      <p class="big">A voice carries what a profile can't: warmth, humor, honesty, pace.</p>
+      <div class="pull">We built the veil on purpose — so the first thing you fall for is the person, not the picture.</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="status">
+      <div class="kicker sans">In development · Pilot testers wanted</div>
+      <h2 class="status-h">Help us test it first</h2>
+      <p>The Voice Between Us is in development by Tech ConnectIT, an AI technology company. We're gathering our first pilot testers now — join the list and you'll be first to know when the pilot opens, and first in line to try it.</p>
+      <!-- Capture activates only after the privacy policy is published (gap-analysis gate). Form ships disabled. -->
+      <form class="waitlist sans" onsubmit="return false">
+        <input type="email" placeholder="you@example.com" aria-label="Email address" disabled>
+        <button type="submit" disabled>Tester list opens soon</button>
+      </form>
+      <div class="fineprint sans">We'll only ever email you about the pilot and the launch. The list opens the moment our privacy policy is live.</div>
+    </div>
+    <p class="disc sans">Your matchmaker is an AI — a program designed and overseen by people at Tech ConnectIT, and it will always tell you so. It is never a person, and never pretends to be.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Safety, by design</h2>
+    <p class="safety">Built with a safety protocol from day one, with human escalation paths and crisis-resource routing designed in — not bolted on.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap row sans">
+    <div>© 2026 Tech ConnectIT, LLC · The Voice Between Us is a product of <a href="https://techconnectit.ai">Tech ConnectIT, LLC</a></div>
+    <div>Privacy Policy · Terms (in preparation)</div>
+  </div>
+</footer>
+</body>
+</html>
