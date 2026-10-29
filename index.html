@@ -129,12 +129,11 @@
       <div class="kicker sans">In development · Pilot testers wanted</div>
       <h2 class="status-h">Help us test it first</h2>
       <p>The Voice Between Us is in development by Tech ConnectIT, an AI technology company. We're gathering our first pilot testers now — join the list and you'll be first to know when the pilot opens, and first in line to try it.</p>
-      <!-- Capture activates only after the privacy policy is published (gap-analysis gate). Form ships disabled. -->
-      <form class="waitlist sans" onsubmit="return false">
-        <input type="email" placeholder="you@example.com" aria-label="Email address" disabled>
-        <button type="submit" disabled>Tester list opens soon</button>
+      <form class="waitlist sans" onsubmit="window.location='mailto:hello@thevoicebetweenus.com?subject=Tester%20list%20signup&body=' + encodeURIComponent('Please add me to the pilot tester list: ' + this.querySelector('input[type=email]').value); return false;">
+        <input type="email" placeholder="you@example.com" aria-label="Email address" required>
+        <button type="submit">Join the tester list</button>
       </form>
-      <div class="fineprint sans">We'll only ever email you about the pilot and the launch. The list opens the moment our privacy policy is live.</div>
+      <div class="fineprint sans">We'll only ever email you about the pilot and the launch. Read our <a href="privacy-policy.html">Privacy Policy</a>.</div>
     </div>
     <p class="disc sans">Your matchmaker is an AI — a program designed and overseen by people at Tech ConnectIT, and it will always tell you so. It is never a person, and never pretends to be.</p>
   </div>
@@ -150,7 +149,7 @@
 <footer>
   <div class="wrap row sans">
     <div>© 2026 Tech ConnectIT, LLC · The Voice Between Us is a product of <a href="https://techconnectit.ai">Tech ConnectIT, LLC</a></div>
-    <div>Privacy Policy · Terms (in preparation)</div>
+    <div><a href="privacy-policy.html">Privacy Policy</a> · Terms (in preparation)</div>
   </div>
 </footer>
 </body>
